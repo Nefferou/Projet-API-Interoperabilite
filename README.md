@@ -1,5 +1,6 @@
 # ynov-API-TP1 : Pokemon API
 
+## Objectif du projet
 **Pokemon API** est un projet web communiquant avec une API qui renvoie des données sur des pokémons.
 - La page web liste les données des pokémons (noms, types, faiblesses, résistances...)
 - Les données sont récupérées d'une API écrite en Java.
