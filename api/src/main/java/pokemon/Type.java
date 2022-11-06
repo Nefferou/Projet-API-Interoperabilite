@@ -1,4 +1,4 @@
-package com.api.api;
+package pokemon;
 
 public class Type {
     

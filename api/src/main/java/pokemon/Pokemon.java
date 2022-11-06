@@ -1,20 +1,19 @@
-package com.api.api;
+package pokemon;
 
 public class Pokemon {
 
-    private int id;
     private String nom;
     private String Habitat;
     private int attaque;
     private int defense;
     private Type type;
 
-    public int getId() {
-        return this.id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
+    public Pokemon(String nom, String Habitat, int attaque, int defense) {
+        this.nom = nom;
+        this.Habitat = Habitat;
+        this.attaque = attaque;
+        this.defense = defense;
     }
 
     public String getNom() {
