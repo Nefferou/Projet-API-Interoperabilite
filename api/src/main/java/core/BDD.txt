@@ -15,4 +15,3 @@ Lazion,Ville,69,69,FEE
 Samegrate,Foret,30,90,TENEBRES
 Kelly,Ville,100,10,TENEBRES
 Soporyves,Overwatch,50,50,ELECTRIQUE
-Gypsou,Nice,100,100,TENEBRES

@@ -38,15 +38,15 @@ public class PokemonAPI {
         return PokemonController.postPokemon(pokemon);
     }
 
-    // @PutMapping(path = "/pokemons")
-    // public Pokemon putPokemon(Pokemon pokemon) throws Exception{
-    //     return PokemonController.putPokemon();
-    // }
+    @PutMapping(path = "/pokemons/{id}")
+    public Pokemon putPokemon(@PathVariable int id, @RequestBody Pokemon pokemon) throws Exception{
+        return PokemonController.putPokemon(id, pokemon);
+    }
 
-    // @DeleteMapping(path = "/pokemons/{id}")
-    // public Pokemon deletePokemon(@PathVariable int id) throws Exception{
-    //     return PokemonController.deletePokemon(id);
-    // }
+    @DeleteMapping(path = "/pokemons/{id}")
+    public Pokemon deletePokemon(@PathVariable int id) throws Exception{
+        return PokemonController.deletePokemon(id);
+    }
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(PokemonAPI.class, args);

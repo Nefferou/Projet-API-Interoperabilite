@@ -45,17 +45,59 @@ public class PokemonController {
     }
 
     public static Pokemon postPokemon(Pokemon p) throws IOException {
-        
+
         PokemonController.getPokemons();
-        p.setId(PokemonController.pokemon.size()+1);
+        p.setId(PokemonController.pokemon.size() + 1);
         PokemonController.pokemon.add(p);
         try {
-                BufferedWriter out = new BufferedWriter(new FileWriter("./src/main/java/core/BDD.txt",true));
-                try {out.write("\n"+PokemonController.pokemon.get(PokemonController.pokemon.size()-1).toString());} 
-                finally {out.close();}
+            BufferedWriter out = new BufferedWriter(new FileWriter("./src/main/java/core/BDD.txt", true));
+            try {
+                out.write("\n" + PokemonController.pokemon.get(PokemonController.pokemon.size() - 1).toString());
+            } finally {
+                out.close();
+            }
         } catch (IOException e) {
-                    e.printStackTrace();
+            e.printStackTrace();
         }
-        return PokemonController.pokemon.get(PokemonController.pokemon.size()-1);
+        return PokemonController.pokemon.get(PokemonController.pokemon.size() - 1);
+    }
+
+    public static Pokemon putPokemon(int id, Pokemon p) throws IOException {
+        PokemonController.getPokemons();
+        PokemonController.pokemon.set(id-1, p);
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter("./src/main/java/core/BDD.txt"));
+            for (Pokemon pok : PokemonController.pokemon) {
+                try {
+                    out.write(pok.toString() + "\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        PokemonController.getPokemons();
+        return PokemonController.pokemon.get(id-1);
+    }
+
+    public static Pokemon deletePokemon(int id) throws IOException {
+        PokemonController.getPokemons();
+        PokemonController.pokemon.remove(id-1);
+        try {
+            BufferedWriter out = new BufferedWriter(new FileWriter("./src/main/java/core/BDD.txt"));
+            for (Pokemon pok : PokemonController.pokemon) {
+                try {
+                    out.write(pok.toString() + "\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            out.close();
+        } catch (IOException e) {
+                e.printStackTrace();
+        }
+    return null;
     }
 }

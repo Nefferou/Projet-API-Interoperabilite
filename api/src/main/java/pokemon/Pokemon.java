@@ -30,14 +30,6 @@ public class Pokemon {
         this.type = type;
     }
 
-    public Pokemon(Pokemon p) {
-        p.nom = nom;
-        p.habitat = habitat;
-        p.attaque = attaque;
-        p.defense = defense;
-        p.type = type;
-    }
-
     public int getId() {
         return this.id;
     }
