@@ -2,8 +2,6 @@ package api;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
