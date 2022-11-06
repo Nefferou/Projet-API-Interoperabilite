@@ -2,18 +2,49 @@ package pokemon;
 
 public class Pokemon {
 
+    private int id;
     private String nom;
-    private String Habitat;
+    private String habitat;
     private int attaque;
     private int defense;
-    private Type type;
+    private String type;
 
 
-    public Pokemon(String nom, String Habitat, int attaque, int defense) {
+    public Pokemon() {
+    }
+
+    public Pokemon(int id, String nom, String habitat, int attaque, int defense, String type) {
+        this.id = id;
         this.nom = nom;
-        this.Habitat = Habitat;
+        this.habitat = habitat;
         this.attaque = attaque;
         this.defense = defense;
+        this.type = type;
+    }
+
+    public Pokemon(String nom, String habitat, int attaque, int defense, String type) {
+        this.nom = nom;
+        this.habitat = habitat;
+        this.attaque = attaque;
+        this.defense = defense;
+        this.type = type;
+    }
+
+    public Pokemon(int id, Pokemon p) {
+        this.id = id;
+        p.nom = nom;
+        p.habitat = habitat;
+        p.attaque = attaque;
+        p.defense = defense;
+        p.type = type;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -25,11 +56,11 @@ public class Pokemon {
     }
 
     public String getHabitat() {
-        return this.Habitat;
+        return this.habitat;
     }
 
-    public void setHabitat(String Habitat) {
-        this.Habitat = Habitat;
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
     }
 
     public int getAttaque() {
@@ -48,12 +79,16 @@ public class Pokemon {
         this.defense = defense;
     }
 
-    public Type getType() {
+    public String getType() {
         return this.type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return getNom() + "," + getHabitat() + "," + getAttaque() + "," + getDefense() + "," + getType();
+    }
 }

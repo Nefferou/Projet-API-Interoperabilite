@@ -1,35 +1,53 @@
 package api;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.sql.*;
+
+import javax.websocket.server.PathParam;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import core.BDD;
-import pokemon.*;
+import pokemon.PokemonController;
+import pokemon.Pokemon;
 
 @RestController
 @RequestMapping(path = "/api")
 public class PokemonAPI {
 
-    BDD bdd = new BDD();
+    public PokemonAPI() {
+    }
 
-    @GetMapping(path = "/pokemons", produces = "application/json")
-    public List<Pokemon> getPokemon() {
-        try {
-            
-            ResultSet result = this.bdd.getBdd().executeQuery("SELECT * FROM Pokemon");
-            List<Pokemon> pokList = new ArrayList<Pokemon>();
+    @GetMapping(path = "/pokemons")
+    public List<Pokemon> getAllPokemon() throws Exception{
+        return PokemonController.getPokemons();
+    }
 
-            while(result.next()){
-                pokList.add(new Pokemon(result.getString(1), result.getString(2), result.getInt(3), result.getInt(4)));
-            }
+    @GetMapping(path = "/pokemons/{id}")
+    public Pokemon getPokemonById(@PathVariable int id) throws Exception{
+        return PokemonController.getPokemon(id);
+    }
 
-            return pokList;
+    @PostMapping(path = "/pokemons")
+    public Pokemon postPokemon(Pokemon pokemon) throws Exception{
+        return pokemon;
+    }
 
-        } catch (Exception e) {
-            return null;
-        }
+    // @PutMapping(path = "/pokemons")
+    // public Pokemon putPokemon(Pokemon pokemon) throws Exception{
+    //     return PokemonController.putPokemon();
+    // }
+
+    // @DeleteMapping(path = "/pokemons/{id}")
+    // public Pokemon deletePokemon(@PathVariable int id) throws Exception{
+    //     return PokemonController.deletePokemon(id);
+    // }
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(PokemonAPI.class, args);
     }
 }
