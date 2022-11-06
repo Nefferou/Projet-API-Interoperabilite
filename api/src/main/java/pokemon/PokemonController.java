@@ -18,6 +18,7 @@ public class PokemonController {
 
     public static List<Pokemon> getPokemons() throws IOException {
         try {
+            PokemonController.pokemon = new ArrayList<>();
             FileReader bdd = new FileReader(PokemonController.file);
             BufferedReader br = new BufferedReader(bdd);
             String[] tabPokemon;
@@ -39,11 +40,15 @@ public class PokemonController {
     }
 
     public static Pokemon getPokemon(int id) throws IOException {
+        PokemonController.getPokemons();
         return PokemonController.pokemon.get(id - 1);
     }
 
     public static Pokemon postPokemon(Pokemon p) throws IOException {
-        PokemonController.pokemon.add(new Pokemon(PokemonController.pokemon.size(),p));
+        
+        PokemonController.getPokemons();
+        p.setId(PokemonController.pokemon.size()+1);
+        PokemonController.pokemon.add(p);
         try {
                 BufferedWriter out = new BufferedWriter(new FileWriter("./src/main/java/core/BDD.txt",true));
                 try {out.write("\n"+PokemonController.pokemon.get(PokemonController.pokemon.size()-1).toString());} 
@@ -51,6 +56,6 @@ public class PokemonController {
         } catch (IOException e) {
                     e.printStackTrace();
         }
-        return p;
+        return PokemonController.pokemon.get(PokemonController.pokemon.size()-1);
     }
 }

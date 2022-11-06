@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pokemon.PokemonController;
@@ -33,8 +34,8 @@ public class PokemonAPI {
     }
 
     @PostMapping(path = "/pokemons")
-    public Pokemon postPokemon(Pokemon pokemon) throws Exception{
-        return pokemon;
+    public Pokemon postPokemon(@RequestBody Pokemon pokemon) throws Exception{
+        return PokemonController.postPokemon(pokemon);
     }
 
     // @PutMapping(path = "/pokemons")

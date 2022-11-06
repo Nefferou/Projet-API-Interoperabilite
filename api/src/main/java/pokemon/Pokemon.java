@@ -30,8 +30,7 @@ public class Pokemon {
         this.type = type;
     }
 
-    public Pokemon(int id, Pokemon p) {
-        this.id = id;
+    public Pokemon(Pokemon p) {
         p.nom = nom;
         p.habitat = habitat;
         p.attaque = attaque;
