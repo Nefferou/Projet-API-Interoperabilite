@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\ferti\\Downloads\\mysql-connector-java-8.0.18.jar",
+            "c:\\Users\\ferti\\Downloads\\mssql-jdbc-11.2.0.jre18.jar"
+        ],
+        "exclude": [
+            "c:\\Users\\ferti\\Downloads\\mysql-connector-java-8.0.18.jar"
+        ]
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

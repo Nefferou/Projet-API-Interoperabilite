@@ -1,0 +1,17 @@
+Sammylameche,Grotte,20,15,FEU
+Leolite,Montagne,50,30,ACIER
+Stalatac,Grotte,40,10,ROCHE
+Stalamax,Grotte,10,40,ROCHE
+Chicharbon,Rue,60,20,FEU
+Cannarbis,Champs,90,10,PLANTE
+Pleau,Chantier,10,10,EAU
+Desdant,Air,80,20,FEE
+Mesperez,Canalisation,100,0,LUMIERE
+Niggrosier,Champs,17,49,TENEBRES
+Grascaufeu,Plaines,70,50,FEU
+Bullbowser,Chateau,80,60,PLANTE
+Blob,Ocean,1,1,EAU
+Lazion,Ville,69,69,FEE
+Samegrate,Foret,30,90,TENEBRES
+Kelly,Ville,100,10,TENEBRES
+Soporyves,Overwatch,50,50,ELECTRIQUE
