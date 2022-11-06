@@ -1,7 +1,7 @@
 // Tableau contenant les pokémons
 const pokemons = [
 	{
-		nom: 'Bulbizarre',
+		nom: 'Florizarre',
 		habitat: 'Forêt',
 		attaque: 50,
 		defense: 40,
