@@ -16,6 +16,19 @@ h1 {
 	font-weight: 100
 }
 
+.sub-request {
+	font-size: 20px;
+}
+
+.submit-button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.typeList {
+	cursor: pointer;
+}
+
 .pokemons-table {
 	overflow: auto;
 	border-style: solid;
