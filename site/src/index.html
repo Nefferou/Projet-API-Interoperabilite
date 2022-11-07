@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pokemon API</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+	<script src="./bootstrap/js/bootstrap.js"></script>
+	<script type="module" src="./js/types-list.js"></script>
+	<script type="module" src="./js/pokemons-table-body.js"></script>
+</head>
+
+<body class="root">
+	<!-- index.js -->
+	<div class="container table-responsive py-5">
+		<h1>Pokemon API</h1>
+		<div class="content row rounded-4">
+			<div class="col-2">
+				<h2 class="thin-text">Types</h2>
+				<ul class="types-list">
+					<!-- types-list.js -->
+				</ul>
+
+				<label class="sub-request">Search with a specific ID:</label>
+				<input type="text" id="searchById">
+				<input type="submit" id="search-button" class="submit-button" value="Search">
+
+				<label class="sub-request">Add a new Pokemon:</label>
+				<label>Enter its name: </label>
+				<input type="text" id="add-pokemon-name">
+				<label>Enter its habitat: </label>
+				<input type="text" id="add-pokemon-habitat">
+				<label>Enter its attack: </label>
+				<input type="text" id="add-pokemon-atk">
+				<label>Enter its defense: </label>
+				<input type="text" id="add-pokemon-def">
+				<label>Enter its type: </label>
+				<input type="text" id="add-pokemon-type">
+				<input type="submit" id="add-button" class="submit-button" value="Add">
+
+				<label class="sub-request">Delete with a specific ID:</label>
+				<input type="text" id="deleteById">
+				<input type="submit" id="delete-button" class="submit-button" value="Delete">
+
+				<label class="sub-request">Reload Pokemon List:</label>
+				<input type="submit" id="reload-button" class="submit-button" value="Reload">
+
+			</div>
+			<div class="col-10">
+				<h2>Pokemons</h2>
+				<div class="pokemons-table rounded-4">
+					<table class="table  table-hover">
+						<thead class="table-dark">
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Nom</th>
+								<th scope="col">Habitat</th>
+								<th scope="col">Attaque</th>
+								<th scope="col">Défense</th>
+								<th scope="col">Type</th>
+							</tr>
+						</thead>
+
+						<tbody class="pokemons-table-body">
+							<!-- pokemons-table.js -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body></html>
