@@ -1,0 +1,44 @@
+.root {
+	background-color: #E8E8E8;
+}
+
+h1 {
+	font-size: 40px !important;
+}
+
+.content {
+	background-color: white;
+	padding-top: 8px;
+	padding-left: 4px;
+}
+
+.thin-text {
+	font-weight: 100
+}
+
+.sub-request {
+	font-size: 20px;
+}
+
+.submit-button {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.typeList {
+	cursor: pointer;
+}
+
+.pokemons-table {
+	overflow: auto;
+	border-style: solid;
+	border-width: medium;
+	border-color: #E8E8E8;
+	margin-bottom: 12px;
+
+}
+
+table {
+	overflow: hidden;
+	margin-bottom: 0px !important;
+}
